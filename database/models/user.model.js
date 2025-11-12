@@ -16,11 +16,8 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true
     }, 
-    confirmEmail:{
-        type:Boolean,
-        default:false,
-    },
-    otpCode:String
+    otpCode:String,
+    
 })
 
 const User = mongoose.model('User',userSchema)

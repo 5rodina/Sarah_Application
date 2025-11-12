@@ -12,12 +12,13 @@ export const sendEmails = async (email,otpCode) => {
       },
     });
   
-    jwt.sign({ email }, 'koko', async (err, token) => {
+    jwt.sign({ email }, 'koko', async (err) => {
         
         await transporter.sendMail({
-          from: 'jobsearch <rodinaaymen@gmail.com>',
+          from: 'Careery <rodinaaymen@gmail.com>',
+          subject: 'Confirmation mail',
           to: email,
-          html: `<a href="http://localhost:3000/verify/${token}">Click here to confirm , ur otp code ${otpCode}</a>`
+          html: `<a href="http://localhost:3000/v">Click here to confirm , ur otp code ${otpCode}</a>`
         });
     
     });
